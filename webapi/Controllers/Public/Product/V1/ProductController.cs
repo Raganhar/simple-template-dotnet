@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct;
+using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Request;
+using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Response;
 
 namespace webapi.Controllers.Public.Product.V1;
 
@@ -18,15 +21,27 @@ public class ProductController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpPost]
+    [ProducesResponseType(typeof(CreateProductResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status403Forbidden)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType( StatusCodes.Status422UnprocessableEntity)]
+    public async Task<ActionResult> Get([FromServices] CreateProductHandler handler, CreateProductRequest request)
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        
+        //TODO: Should we map from HTTP request model to som internal model?
+        var res = await handler.Execute(request);
+
+        switch (res.Item2)
+        {
+            case CreateProductHandlerResult.success:
+                return Ok(res.Item1);
+            case CreateProductHandlerResult.misconfigured:
+                return BadRequest();
+            case CreateProductHandlerResult.someOtherResult:
+                return Conflict();
+            default:
+                throw new ArgumentOutOfRangeException(); //TODO: configure global exception handling to not expose data
+        }
     }
 }
