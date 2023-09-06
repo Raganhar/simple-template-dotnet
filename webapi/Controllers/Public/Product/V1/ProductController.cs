@@ -9,11 +9,6 @@ namespace webapi.Controllers.Public.Product.V1;
 [Route("[controller]")]
 public class ProductController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
     private readonly ILogger<ProductController> _logger;
 
     public ProductController(ILogger<ProductController> logger)

@@ -10,6 +10,7 @@ public interface IAbc234IntegrationService
     Task<object> DoSomeStuff(object data);
 }
 
+//TODO: determine responsiblity of "integration layer services", how will that play with multiple Handlers using the same services ?
 public class Abc234IntegrationService : IAbc234IntegrationService
 {
     public async Task<SomeResponseModel> GetData()
@@ -21,6 +22,7 @@ public class Abc234IntegrationService : IAbc234IntegrationService
             case (int)HttpStatusCode.NotFound:
                 //TODO: some metrics stuff
                 return null;
+            case (int)HttpStatusCode.InternalServerError: //TODO: what to do regarding "exceptional behavior"
             case (int)HttpStatusCode.Unauthorized:
             case (int)HttpStatusCode.Forbidden:
                 //TODO: some metrics stuff

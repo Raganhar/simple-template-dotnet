@@ -7,7 +7,7 @@ public interface ICreateProductDao
     Task<bool> CreateNewProduct(object data) // whatever needs to be saved in the db
         ;
 }
-
+//TODO reflect no DAO classes vs C2B & Managed commands
 public class CreateProductDao : ICreateProductDao
 {
     public async Task<object> GetData(Guid id)
