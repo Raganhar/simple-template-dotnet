@@ -7,15 +7,15 @@ using Xunit;
 
 namespace Tests.Controllers.Public.V1.Handlers.CreateProductTests.HandlerTests.VerticalSliceTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class CreateProductIntegrationTests
 {
     private readonly IFlurlRequest _flurlRequest;
-    private readonly TestWebApplicationFactory _factory;
+    private readonly VerticalTestFactory _factory;
     private object _db;
     private readonly CreateProductHandler _handler;
 
-    public CreateProductIntegrationTests(TestWebApplicationFactory factory)
+    public CreateProductIntegrationTests(VerticalTestFactory factory)
     {
         _factory = factory;
 

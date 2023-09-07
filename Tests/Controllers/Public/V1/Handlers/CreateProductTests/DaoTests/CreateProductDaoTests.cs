@@ -5,14 +5,14 @@ using Xunit;
 
 namespace Tests.Controllers.Public.V1.Handlers.CreateProductTests.DaoTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class CreateProductDaoTests
 {
-    private readonly TestWebApplicationFactory _factory;
+    private readonly DaoTestFactory _factory;
     private readonly ICreateProductDao _dao;
     private readonly object _db; //TODO: replace with example dbContext
 
-    public CreateProductDaoTests(TestWebApplicationFactory factory)
+    public CreateProductDaoTests(DaoTestFactory factory)
     {
         _factory = factory;
 

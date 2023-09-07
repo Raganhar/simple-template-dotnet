@@ -5,9 +5,9 @@ using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Dao;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.RandomLogic;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Request;
-using webapi.EventHandlers.ProductTopic.UpdateProductSearchCache;
-using webapi.EventHandlers.ProductTopic.UpdateProductSearchCache.Dao;
-using webapi.EventHandlers.ProductTopic.UpdateProductSearchCache.RandomLogic;
+using webapi.Events.EventHandlers.Private.ProductTopic.UpdateProductSearchCache;
+using webapi.Events.EventHandlers.Private.ProductTopic.UpdateProductSearchCache.Dao;
+using webapi.Events.EventHandlers.Private.ProductTopic.UpdateProductSearchCache.RandomLogic;
 using Xunit;
 
 namespace Tests.EventHandlers.ProductTopic.UpdateProductSearchCacheTests.HandlerTests.HandlerFlowTests;

@@ -1,6 +1,7 @@
 # Scope
 Vertical slice tests will verify the following:
 - That everything works when actually putting all the things together
+- Can be limited to only test happy path
 
 # Testing
 Expected test level: <b>Integration tests with mocked external dependencies</b>

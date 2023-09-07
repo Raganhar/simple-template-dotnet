@@ -8,14 +8,14 @@ using Xunit;
 
 namespace Tests.Controllers.Public.V1.Handlers.CreateProductTests.ApiTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class CreateProductApiTests
 {
     private readonly IFlurlRequest _flurlRequest;
-    private readonly TestWebApplicationFactory _factory;
+    private readonly ApiEndpointTestFactory _factory;
     private readonly CreateProductHandler _handler;
 
-    public CreateProductApiTests(TestWebApplicationFactory factory)
+    public CreateProductApiTests(ApiEndpointTestFactory factory)
     {
         _factory = factory;
 

@@ -1,18 +1,18 @@
 ﻿using FluentAssertions;
 using Tests.TestFixtures;
-using webapi.EventHandlers.ProductTopic.UpdateProductSearchCache.Dao;
+using webapi.Events.EventHandlers.Private.ProductTopic.UpdateProductSearchCache.Dao;
 using Xunit;
 
 namespace Tests.EventHandlers.ProductTopic.UpdateProductSearchCacheTests.DaoTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class UpdateProductSearchCacheDaoTests
 {
-    private readonly TestWebApplicationFactory _factory;
+    private readonly DaoTestFactory _factory;
     private readonly IUpdateProductSearchCacheDao _dao;
     private readonly object _db; //TODO: replace with example dbContext
 
-    public UpdateProductSearchCacheDaoTests(TestWebApplicationFactory factory)
+    public UpdateProductSearchCacheDaoTests(DaoTestFactory factory)
     {
         _factory = factory;
 

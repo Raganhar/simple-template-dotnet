@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Tests.Controllers.Public.V1.Handlers.CreateProductTests.HandlerTests.HandlerFlowTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class CreateProductHandlerTests
 {
     [Test]

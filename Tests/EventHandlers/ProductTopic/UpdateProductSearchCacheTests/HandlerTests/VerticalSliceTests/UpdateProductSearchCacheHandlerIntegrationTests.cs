@@ -3,19 +3,19 @@ using Flurl.Http;
 using Tests.TestFixtures;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Request;
-using webapi.EventHandlers.ProductTopic.UpdateProductSearchCache;
+using webapi.Events.EventHandlers.Private.ProductTopic.UpdateProductSearchCache;
 using Xunit;
 
 namespace Tests.EventHandlers.ProductTopic.UpdateProductSearchCacheTests.HandlerTests.VerticalSliceTests;
 
-[Collection(nameof(IntegrationTestFixture))]
+[Collection(nameof(VertricalTestFixture))]
 public class UpdateProductSearchCacheHandlerIntegrationTests
 {
-    private readonly TestWebApplicationFactory _factory;
+    private readonly VerticalTestFactory _factory;
     private object _db;
     private readonly UpdateProductSearchCacheHandler _handler;
 
-    public UpdateProductSearchCacheHandlerIntegrationTests(TestWebApplicationFactory factory)
+    public UpdateProductSearchCacheHandlerIntegrationTests(VerticalTestFactory factory)
     {
         _factory = factory;
         _db = _factory.GetService<object>();
