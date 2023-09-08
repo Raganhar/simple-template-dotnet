@@ -27,8 +27,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="EventHandlers\ProductTopic\UpdateProductCanonicalModelTests" />
-      <Folder Include="EventHandlers\ProductTopic\UpdateProductSearchCacheTests" />
+      <Folder Include="Events" />
+      <Folder Include="Events\EventHandlers\Private" />
+      <Folder Include="Events\EventHandlers\Public" />
       <Folder Include="Services\CachingTests" />
     </ItemGroup>
 

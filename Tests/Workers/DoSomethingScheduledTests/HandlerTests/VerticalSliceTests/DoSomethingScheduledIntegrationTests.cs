@@ -5,19 +5,18 @@ using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct;
 using webapi.Controllers.Public.Product.V1.Handlers.CreateProduct.Request;
 using Xunit;
 
-namespace Tests.Controllers.Public.V1.Handlers.CreateProductTests.HandlerTests.VerticalSliceTests;
+namespace Tests.Workers.DoSomethingScheduledTests.HandlerTests.VerticalSliceTests;
 
 [Collection(nameof(VertricalTestFixture))]
-public class CreateProductIntegrationTests
+public class DoSomethingScheduledIntegrationTests
 {
     private readonly VerticalTestFactory _factory;
     private object _db;
     private readonly CreateProductHandler _handler;
 
-    public CreateProductIntegrationTests(VerticalTestFactory factory)
+    public DoSomethingScheduledIntegrationTests(VerticalTestFactory factory)
     {
         _factory = factory;
-
         _db = _factory.GetService<object>();
         _handler = _factory.GetService<CreateProductHandler>();
     }

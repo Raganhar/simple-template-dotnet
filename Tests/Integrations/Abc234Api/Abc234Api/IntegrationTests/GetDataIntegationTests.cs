@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using webapi.Services.Abc234Api;
 
-namespace Tests.Services.Abc234Api.Abc234IntegrationServiceTests;
+namespace Tests.Integrations.Abc234Api.Abc234Api.IntegrationTests;
 
 public class GetDataIntegationTests
 {

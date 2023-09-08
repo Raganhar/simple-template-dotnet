@@ -4,7 +4,7 @@ using Flurl.Http.Testing;
 using webapi.Services.Abc234Api;
 using webapi.Services.Abc234Api.IntegrationModels;
 
-namespace Tests.Services.Abc234Api;
+namespace Tests.Integrations.Abc234Api.Abc234Api.UnitTests;
 
 public class GetDataTests
 {
